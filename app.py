@@ -50,33 +50,28 @@ data = [
     {"Israeli Product": "Victoria’s Secret", "Category": "Clothing", "Pakistani Alternative": "Khaadi / Limelight"}
 ]
 
-# Convert to DataFrame
 df = pd.DataFrame(data)
 
-# Streamlit app UI
 st.set_page_config(page_title="Boycott Israeli Products", page_icon="🛍️", layout="wide")
-
-# Stylish title and description
 st.markdown("""
     <h1 style='text-align:center;color:#dc3545;'>🚫 Boycott Israeli Products – Support Local 🇵🇰</h1>
     <p style='text-align:center;'>This app helps you identify Israeli products and switch to Pakistani alternatives. Support your local economy!</p>
 """, unsafe_allow_html=True)
 
-# Sidebar with filters
+st.image("https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg", width=300, caption="Free Palestine 🇵🇸", use_column_width=False)
+
 with st.sidebar:
     st.header("Filter by Category")
     category_filter = st.selectbox("Select Category", ["All"] + sorted(df["Category"].unique()))
 
-# Filtered DataFrame
 if category_filter != "All":
     filtered_df = df[df["Category"] == category_filter]
 else:
     filtered_df = df
 
-# Display the table with a nice format
+
 st.markdown("### 📋 Full Product List")
 st.dataframe(filtered_df, use_container_width=True)
 
-# Footer with caption
 st.markdown("---")
 st.markdown("<p style='text-align:center;'>Made with 🤍 for Palestine.</p>", unsafe_allow_html=True)
