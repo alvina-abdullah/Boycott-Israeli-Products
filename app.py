@@ -56,7 +56,7 @@ st.markdown("""
     <p style='text-align:center;'>This app helps you identify Israeli products and switch to Pakistani alternatives. Support your local economy!</p>
 """, unsafe_allow_html=True)
 
-st.image("https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg", width=300, caption="Free Palestine 🇵🇸", use_column_width=False)
+st.image("https://upload.wikimedia.org/wikipedia/commons/0/00/Flag_of_Palestine.svg", width=300, caption="Free Palestine 🇵🇸", use_container_width=False)
 
 with st.sidebar:
     st.header("Filter by Category")
